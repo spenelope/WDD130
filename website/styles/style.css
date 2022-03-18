@@ -1,0 +1,168 @@
+*{
+    grid-gap:0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    margin: center;
+    justify-items: stretch;
+    align-items: stretch;
+    text-align: center;
+    vertical-align: middle;
+    line-height:normal;
+    float: center;
+}
+
+/* **** **** **** **** **** **** **** **** **** **** **** **** */
+
+.btn {
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  /* Green */
+  .success {
+    border-color: #04AA6D;
+    color: green;
+  }
+  
+  .success:hover {
+    background-color: #04AA6D;
+    color: white;
+  }
+  
+  /* Blue */
+  .info {
+    border-color: #2196F3;
+    color: dodgerblue;
+  }
+  
+  .info:hover {
+    background: #2196F3;
+    color: white;
+  }
+  
+  /* Orange */
+  .warning {
+    border-color: #ff9800;
+    color: orange;
+  }
+  
+  .warning:hover {
+    background: #ff9800;
+    color: white;
+  }
+  
+  /* Red */
+  .danger {
+    border-color: #f44336;
+    color: red;
+  }
+  
+  .danger:hover {
+    background: #f44336;
+    color: white;
+  }
+  
+  /* Gray */
+  .default {
+    border-color: #e7e7e7;
+    color: black;
+  }
+  
+  .default:hover {
+    background: #e7e7e7;
+  }
+
+  
+  /* The flip box container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-box {
+    background-color: transparent;
+    width: 300px;
+    height: 200px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  }
+  
+  /* This container is needed to position the front and back side */
+  .flip-box-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+  }
+  
+  /* Do an horizontal flip when you move the mouse over the flip box container */
+  .flip-box:hover .flip-box-inner {
+    transform: rotateY(180deg);
+  }
+  
+  /* Position the front and back side */
+  .flip-box-front, .flip-box-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+  }
+  
+  /* Style the front side */
+  .flip-box-front {
+    background-color: #bbb;
+    color: black;
+  }
+  
+  /* Style the back side */
+  .flip-box-back {
+    background-color: dodgerblue;
+    color: white;
+    transform: rotateY(180deg);
+  }
+
+  /* **** ***** ***** **** **** **** **** ****  */
+
+  .wrapper{
+    display:grid;
+    grid-template-columns:1fr 2fr 1fr;
+    grid-auto-rows: minmax(100px, auto);
+    grid-gap:1em;
+    /* justify-items: start;
+    justify-items: end; */
+    justify-items: stretch;
+    /* align-items: start;
+    align-items: end; */
+    align-items: stretch;
+}
+.wrapper > div{
+    background: #eee;
+    padding: 1em;
+}
+.wrapper > div:nth-child(odd){
+    background: #ddd;
+}
+.box1{
+    /* align-self: start; */
+    grid-column: 1/3;
+    grid-row: 1/3;
+}
+.box2{
+    /* align-self: end; */
+    grid-column: 3;
+    grid-row: 1/3;
+}
+.box3{
+    /* justify-self: end; */
+    grid-column: 2/4;
+    grid-row: 3;
+}
+.box4{
+    /* justify-self: end; */
+    grid-column: 1;
+    grid-row: 2/4;
+    border:1px solid #333
+}
